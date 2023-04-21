@@ -5,13 +5,16 @@
   padding: 0.8rem;
 }
 
-
-
-.p-datatable .p-datatable-thead > tr > th,
-.p-datatable .p-datatable-tbody > tr > td,
-.p-datatable .p-datatable-tfoot > tr > td {
+.p-datatable .p-datatable-thead > tr > th {
   background-color: #2b2c3b;
   color: white;
 }
 
-
+.p-datatable .p-datatable-tbody > tr > td {
+  background-color: #2b2c3b;
+  color: white;
+}
+.p-datatable .p-datatable-tfoot > tr > td {
+  background-color: #2b2c3b;
+  color: white;
+}

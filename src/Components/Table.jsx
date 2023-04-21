@@ -9,17 +9,17 @@ import "./sidebar.css";
 const Table = () => {
   let data = ProductService.getProductsData().slice(0, 5);
   const [products, setProducts] = useState([...data]);
-
+const headetStyle={textAlign:"right"}
   const columns = [
-    { field: "code", header: "Client" },
-    { field: "name", header: "Head" },
-    { field: "quantity", header: "April" },
-    { field: "quantity", header: "Mar" },
-    { field: "quantity", header: "Feb" },
-    { field: "quantity", header: "Jan" },
-    { field: "quantity", header: "Dec" },
-    { field: "quantity", header: "Nov" },
-    { field: "quantity", header: "Total" },
+    { field: "code", header: "Client" ,style:{textAlign:"left"}},
+    { field: "name", header: "Head",style:{textAlign:"left"} },
+    { field: "quantity", header: "April",style:{textAlign:"right"} },
+    { field: "quantity", header: "Mar",style:{textAlign:"right"} },
+    { field: "quantity", header: "Feb",style:{textAlign:"right"} },
+    { field: "quantity", header: "Jan" ,style:{textAlign:"right"}},
+    { field: "quantity", header: "Dec",style:{textAlign:"right"} },
+    { field: "quantity", header: "Nov",style:{textAlign:"right"} },
+    { field: "quantity", header: "Total" ,style:{textAlign:"right"}},
   ];
   const april = () => {
     let total = 0;
@@ -34,7 +34,6 @@ const Table = () => {
         <Column
           footer="Total:"
           colSpan={2}
-          footerStyle={{ textAlign: "left" }}
         />
         <Column footer={april} style={{ textAlign: "right" }} />
         <Column footer={april} style={{ textAlign: "right" }} />
@@ -58,7 +57,11 @@ const Table = () => {
             key={col.field}
             field={col.field}
             header={col.header}
-            style={{ textAlign: col.field == "quantity" ? "right" : "left" }}
+            // style={col.style}
+            style={{
+              textAlign: col.field == "quantity" ? "right" : null,
+              paddingLeft: col.field == "quantity" ? "50px" : null,
+            }}
           />
         ))}
       </DataTable>
